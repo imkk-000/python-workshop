@@ -1,0 +1,5 @@
+I have 3 dogs.
+Tom is 6.
+Fletcher is 7.
+Larry is 9.
+And they're all mammals, of course.
