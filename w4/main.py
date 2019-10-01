@@ -1,16 +1,12 @@
 from abc import ABC, abstractmethod
 
 # Abstract class
-
-
 class Animal(ABC):
     @abstractmethod
     def description(self):
         pass
 
 # Parent class
-
-
 class Dog:
 
     # Class attribute
@@ -45,16 +41,18 @@ class Dog:
     def run(self, speed):
         return "{} runs {}".format(self.name, speed)
 
+    def eat(self):
+        self.is_hungry = False
+
+    def walk(self):
+        return F"{self.name} is walking!"
+
 # Child class (inherits from Dog class)
-
-
 class RussellTerrier(Dog):
     def run(self, speed):
         return "{} runs super fast {}".format(self.name, speed)
 
 # Child class (inherits from Dog class)
-
-
 class Bulldog(Dog):
     def __init__(self, name, age):
         super().__init__(name, age)
@@ -62,10 +60,14 @@ class Bulldog(Dog):
     def run(self, speed):
         return super().run(speed)
 
+# Group of Pets
 class Pets():
     def __init__(self, dogs):
         self.dogs = dogs
 
+    def walk(self):
+        for dog in self.dogs:
+            print(dog.walk())
 
 # Create instances of dogs
 my_dogs = [
